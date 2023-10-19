@@ -1,0 +1,7 @@
+train: C:\Users\cuime\Desktop\yolov5_7_eye\yolov5-7.0\myDataset\dataSet_path\train.txt 
+val: C:\Users\cuime\Desktop\yolov5_7_eye\yolov5-7.0\myDataset\dataSet_path\val.txt 
+test: C:\Users\cuime\Desktop\yolov5_7_eye\yolov5-7.0\myDataset\dataSet_path\text.txt 
+
+# Classes
+nc: 4  # number of classes
+names: ['normal', 'diabetic_retinopathy', "glaucoma", "cataract"]  # class names

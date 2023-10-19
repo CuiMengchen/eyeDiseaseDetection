@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="zxx">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Title -->
+		<title>Login</title>
+
+		<!-- Favicon -->
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+		<!-- Include CSS -->
+		<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="../static/owl-carousel/owl.carousel.css">
+		<link rel="stylesheet" type="text/css" href="../static/owl-carousel/owl.theme.css">
+		<link rel="stylesheet" type="text/css" href="../static/owl-carousel/owl.transitions.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+
+		<!--<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,400i,700,800" rel="stylesheet">--->
+
+	</head>
+
+	<body>
+         
+
+
+		<!-- Loader -->
+		<div id="loader" class="loader">
+			<div class="loader-content">
+				<img src="../static/img/loader.png" alt="Loading...">
+			</div>
+		</div>
+
+		<!-- Header container -->
+		<div class="header-bg">
+			<!-- Container -->
+			<div class="container">
+
+				<div class="row flex">
+					<!-- Logo column -->
+					<div class="col-xs-12 col-sm-5 col-md-4 flex">
+						<a href="index.html">
+							<!-- Logo -->
+							<img src="../static/img/logo.png" class="logo img-responsive" alt="PhotoMarket">
+						</a>
+					</div>
+
+					<!-- Menu column -->
+<!--					<div class="col-xs-12 col-sm-7 col-md-8 flex flex-center">-->
+<!--						&lt;!&ndash; Menu &ndash;&gt;-->
+<!--						<ul class="nav nav-pills">-->
+<!--&lt;!&ndash;							<li role="presentation"><a href="#" id="cart" data-toggle="tooltip" data-placement="bottom" title="Cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge">4</span></a></li>&ndash;&gt;-->
+<!--							<li role="presentation"><a href="#">Log out</a></li>-->
+<!--&lt;!&ndash;							<li role="presentation"><a href="account.html">Your Account</a></li>&ndash;&gt;-->
+<!--							<li role="presentation"><a href="login.html"><b>Welcome,</b> <span>log in</span></a></li>-->
+<!--						</ul>-->
+
+<!--					</div>-->
+				</div>
+
+				<!-- Shopping cart -->
+				<div class="container absolute cart-container">
+					<div class="shopping-cart">
+						<!-- Shopping cart header -->
+						<div class="shopping-cart-header">
+							<!-- Total products in cart -->
+<!--							<i class="fa fa-shopping-cart cart-icon"></i><span class="badge">4</span>-->
+<!--							&lt;!&ndash; Total cart &ndash;&gt;-->
+<!--							<div class="shopping-cart-total">-->
+<!--								<span class="lighter-text">Total:</span>-->
+<!--								<span class="main-color-text">$34.98</span>-->
+<!--							</div>-->
+						</div>
+						<!-- Shopping cart items -->
+						<ul class="shopping-cart-items">
+							<!-- Shopping cart item -->
+							<li class="clearfix">
+								<!-- Item photo -->
+								<img src="../static/img/cart-images/1.jpg" width="70" alt="item1" />
+								<!-- Item Name -->
+								<span class="item-name">Rails</span>
+								<!-- Item Price -->
+								<span class="item-price">$19.99</span>
+								<!-- Item Quantity -->
+								<span class="item-quantity">Quantity: 01</span>
+							</li>
+							<!-- Shopping cart item -->
+							<li class="clearfix">
+								<!-- Item photo -->
+								<img src="../static/img/cart-images/2.jpg" width="70" alt="item2" />
+								<!-- Item Name -->
+								<span class="item-name">Forest leaves</span>
+								<!-- Item Price -->
+								<span class="item-price">$9.99</span>
+								<!-- Item Quantity -->
+								<span class="item-quantity">Quantity: 01</span>
+							</li>
+							<!-- Shopping cart item -->
+							<li class="clearfix">
+								<!-- Item photo -->
+								<img src="../static/img/cart-images/3.jpeg.jpg" width="70" alt="item3" />
+								<!-- Item Name -->
+								<span class="item-name">The tiger</span>
+								<!-- Item Price -->
+								<span class="item-price">$5.00</span>
+								<!-- Item Quantity -->
+								<span class="item-quantity">Quantity: 01</span>
+							</li>
+							<!-- Shopping cart item -->
+							<li class="clearfix">
+								<!-- Item photo -->
+								<img src="../static/img/cart-images/4.jpeg.jpg" width="70" alt="item4" />
+								<!-- Item Name -->
+								<span class="item-name">Flowers</span>
+								<!-- Item Price -->
+								<span class="item-price">FREE</span>
+								<!-- Item Quantity -->
+								<span class="item-quantity">Quantity: 01</span>
+							</li>
+						</ul>
+						<!-- Checkout button -->
+						<a href="checkout.html" class="button">Checkout</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Page container -->
+		<div class="inner-content">
+			<div class="container">
+
+				<!-- Breadcrumb -->
+				<div class="row">
+					<div class="col-sm-12">
+						<ol class="breadcrumb">
+							<li>
+								<a href="/">Home</a>
+							</li>
+							<li class="active">
+								Authentication
+							</li>
+						</ol>
+					</div>
+				</div>
+
+				<!-- Content & sidebar -->
+				<div class="row">
+
+					<!-- content -->
+					<div class="col-sm-8 col-md-9">
+
+						<div class="row">
+							<div class="col-sm-6">
+								<h4 class="title">
+									Create your account
+								</h4>
+								<div class="line-dec"></div>
+								<form action = "http://localhost:5000/register" method = "POST">
+									<h5 class="title" style="color: red">
+										{% if message %}
+											{{message}}
+										{% endif %}
+									</h5>
+
+									<div class="form-group">
+										<label for="name">Name</label>
+										<input type="text" class="form-control" id="name" name="name" placeholder="Your name">
+									</div>
+									<div class="form-group">
+										<label for="password">Password</label>
+										<input type="password" class="form-control" id="password" name="password" placeholder="Password">
+									</div>
+									<div class="form-group">
+										<label for="passwordRepeat">Repeat password</label>
+										<input type="password" class="form-control" id="passwordRepeat" name="passwordRepeat" placeholder="Repeat your password">
+									</div>
+									<div class="form-group">
+										<label for="age">age</label>
+										<input type="text" class="form-control" id="age" name="age" placeholder="Your age">
+									</div>
+									<button type="submit" class="btn btn-primary">Submit</button>
+								</form>
+							</div>
+
+							<div class="col-sm-6">
+								<h4 class="title">
+									Already registered?
+								</h4>
+								<div class="line-dec"></div>
+								<form action="http://localhost:5000/login" method="POST">
+									<div class="form-group">
+										<label for="name_login">name</label>
+										<input type="text" class="form-control" id="name_login" name="name_login" placeholder="Name">
+									</div>
+									<div class="form-group">
+										<label for="password-login">Password</label>
+										<input type="password" class="form-control" id="password-login" name="password_login" placeholder="Password">
+									</div>
+									<div class="checkbox">
+										<label>
+											<input type="checkbox"> Remember me
+										</label>
+									</div>
+									<button type="submit" class="btn btn-primary">Submit</button>
+								</form>
+							</div>
+						</div>
+
+					</div>
+
+					<!-- Sidebar -->
+					<div class="col-sm-4 col-md-3">
+
+<!--						<div class="sidebar-item">-->
+<!--							<h4 class="title">Search</h4>-->
+<!--							<div class="line-dec"></div>-->
+
+<!--							&lt;!&ndash; Search form &ndash;&gt;-->
+<!--							<form class="form-inline" action="search.html">-->
+<!--								<div class="form-group">-->
+<!--									<input type="text" class="form-control" placeholder="Search...">-->
+<!--								</div>-->
+<!--								<button type="submit" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>-->
+<!--							</form>-->
+<!--						</div>-->
+
+						<div class="sidebar-item">
+							<h4 class="title">Categories</h4>
+							<div class="line-dec"></div>
+
+							<ul class="list-group">
+								<li class="list-group-item">
+									<a href="/glaucoma"><span>Glaucoma</span></a>
+								</li>
+								<li class="list-group-item">
+									<a href="/diabetic"><span>Diabetic retinopathy</span></a>
+								</li>
+								<li class="list-group-item">
+									<a href="/cataract"><span>Cataract</span></a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="sidebar-item">
+							<a href="detect"><h4 class="title" href="detect">Detect</h4></a>
+							<div class="line-dec"></div>
+
+<!--							<small><b>4</b> products added.</small>-->
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+
+		<!-- Include Scripts -->
+		<script type="text/javascript" src="../static/js/jquery-3.1.0.min.js"></script>
+		<script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../static/owl-carousel/owl.carousel.min.js"></script>
+		<script type="text/javascript" src="../static/js/main.js"></script>
+
+	</body>
+</html>
+
